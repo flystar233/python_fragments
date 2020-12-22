@@ -25,7 +25,7 @@ def parseFasta(filename): #seq_api
             fas[id] = ''.join(seq)
     return fas #dict
 ```
-字典.方法
+字典点方法
 ```
 class DottableDict(dict):
     def __init__(self, *args, **kwargs):
@@ -38,5 +38,5 @@ class DottableDict(dict):
             self.__dict__ = dict()
 a = {'apple':1,'orange':2}
 new_a = DottableDict(a)
-print(new_a.apple) # 1
+print(new_a.apple,new_a['orange']) # 1 2
 ```
