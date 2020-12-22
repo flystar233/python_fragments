@@ -62,3 +62,21 @@ number = [1,2,3]
 new_dict = dict(zip(a,number))
 print(new_dict) # {'apple': 1, 'orange': 2, 'banana': 3}
 ```
+带参数的装饰器
+```
+import time
+class logger(object):
+    def __init__(self, level='INFO'):
+        self.level = level
+    def __call__(self, func): # 接受函数
+        def wrapper(*args, **kwargs):
+            print(f'[{self.level}]',time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+            func(*args, **kwargs)
+            print(f'[{self.level}]',time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+        return wrapper  #返回函数
+
+@logger(level='time')
+def say():
+    print('yes')
+say()
+```
