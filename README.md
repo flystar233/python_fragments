@@ -40,3 +40,10 @@ a = {'apple':1,'orange':2}
 new_a = DottableDict(a)
 print(new_a.apple,new_a['orange']) # 1 2
 ```
+字典构造（双列表）
+```
+a = ['apple','orange','banana']
+number = [1,2,3] 
+new_dict = dict(zip(a,number))
+print(new_dict) # {'apple': 1, 'orange': 2, 'banana': 3}
+```
