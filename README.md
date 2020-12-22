@@ -25,6 +25,15 @@ def parseFasta(filename): #seq_api
             fas[id] = ''.join(seq)
     return fas #dict
 ```
+csv文件去特殊符号开头行（##）
+```
+def decomment(csvfile):
+    for row in csvfile:
+        raw = row.split('##')[0].strip()
+        if raw: yield raw
+with open('test.tsv','r') as IN：
+    f_csv = csv.reader(decomment(IN),delimiter='\t')
+```
 字典点方法
 ```
 class DottableDict(dict):
