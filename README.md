@@ -1,4 +1,10 @@
 # 有用的 python 代码片段 
+字符同时替换
+```
+adapter = 'aattc'
+r_adapter = adapter.translate(str.maketrans('ACGTacgt', 'TGCAtgca'))
+print(r_adapter) # 'tttaag' 同perl tr///
+```
 解列表嵌套
 ```
 a =[1,2,[3,4],[5,6,7,[8,9]]]
