@@ -80,3 +80,15 @@ def say():
     print('yes')
 say()
 ```
+计算滞后差分值
+```
+library(dplyr)
+data <- data.frame(
+  date = as.Date(c('2024-06-01', '2024-05-31', '2024-05-30', '2024-05-29', '2024-05-28', '2024-05-27', '2024-05-26', '2024-05-25', '2024-05-24')),
+  number = c(5618, 5618, 5610, 5606, 5600, 5596, 5596, 5596, 5596)
+)
+diff_values <- data %>%
+  filter(!weekdays(date) %in% c('星期六', '星期日'))%>%
+  arrange(date) %>%
+  mutate(diff = c(NA, diff(number)))
+```
